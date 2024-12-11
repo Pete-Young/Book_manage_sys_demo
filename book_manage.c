@@ -4,25 +4,12 @@
 #include<stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
-#define MAX_BOOKS 100 // 假设最大图书数量为100
-
-typedef struct 
-{
-    char barcode[20];
-    char title[100];
-    char author[50];
-    char publisher[50];
-    int publish_year;
-    float price;
-    int stock;
-} Book;
+#include "book_manage.h" // 添加此行
 
 // 全局变量
 Book books[MAX_BOOKS];
 int book_count = 0; // 当前图书数量
 
-// 函数声明...
 void loadBooks() { /* 加载图书信息到内存 */ }
 void saveBooks() { /* 保存图书信息到文件 */ }
 
@@ -34,19 +21,24 @@ void addBook() {
 
     Book newBook;
     printf("请输入新图书信息:\n");
-    printf("条形码: "); scanf("%s", newBook.barcode);
-    printf("书名: "); scanf("%s", newBook.title);
-    printf("作者名: "); scanf("%s", newBook.author);
-    printf("出版社: "); scanf("%s", newBook.publisher);
-    printf("出版年份: "); scanf("%d", &newBook.publish_year);
-    printf("价格: "); scanf("%f", &newBook.price);
-    printf("馆藏数量: "); scanf("%d", &newBook.stock);
+    printf("条形码: "); 
+    scanf("%s", newBook.barcode);
+    printf("书名: "); 
+    scanf("%99s", newBook.title); // 修改此行
+    printf("作者名: "); 
+    scanf("%49s", newBook.author); // 修改此行
+    printf("出版社: "); 
+    scanf("%49s", newBook.publisher); // 修改此行
+    printf("出版年份: "); 
+    scanf("%d", &newBook.publish_year);
+    printf("价格: "); 
+    scanf("%f", &newBook.price);
+    printf("馆藏数量: "); 
+    scanf("%d", &newBook.stock);
 
     books[book_count++] = newBook;
     printf("图书添加成功。\n");
 }
-
-#include <stdio.h>
 
 // 显示单本图书信息的辅助函数
 void printBook(const Book* book) 
