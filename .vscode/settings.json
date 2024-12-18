@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "book_link.h": "c",
+        "book_manage.h": "c",
+        "borrow.h": "c",
+        "student.h": "c",
+        "book_func.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "stdio.h": "c"
+    }
+}
